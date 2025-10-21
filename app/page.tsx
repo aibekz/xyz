@@ -1,7 +1,11 @@
+import PageLayout from "@/components/PageLayout";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Hello World</h1>
-    </main>
+    <PageLayout breadcrumbItems={[]}>
+      <div className="w-full flex-1 border border-[var(--text-color)]/30 flex items-center justify-center text-[var(--text-color)]/70">
+        Home Content
+      </div>
+    </PageLayout>
   );
 }
