@@ -3,6 +3,7 @@ import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -24,15 +25,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`antialiased ${ibmPlexSans.variable} bg-[var(--bg-color)] text-[var(--text-color)] font-sans`}
       >
-        <div className="flex min-h-screen h-fit flex-col">
-          <Header />
-          <main className="grow">{children}</main>
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="flex min-h-screen h-fit flex-col">
+            <Header />
+            <main className="grow">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

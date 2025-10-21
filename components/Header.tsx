@@ -1,11 +1,11 @@
-import { Moon } from "lucide-react";
 import Link from "next/link";
 import { navigationItems } from "@/lib/navigation";
 import MobileMenu from "./MobileMenu";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
-    <div className="bg-[var(--bg-color)]/95 sticky top-0 z-50 divide-y xl:divide-none">
+    <div className="bg-[var(--surface)]/95 sticky top-0 z-50 divide-y xl:divide-none">
       <header className="w-full relative">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center gap-4 p-4">
           {/* Left: Logo / Brand */}
@@ -23,22 +23,15 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[var(--text-color)]/70 hover:text-[var(--text-color)] transition-colors"
+                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            {/* Theme Icon (Static) */}
-            <button
-              className="inline-flex items-center justify-center size-9 border border-[var(--border-color)] bg-[var(--bg-color)] hover:bg-[var(--text-color)]/10 hover:text-[var(--text-color)] transition-all duration-200"
-              type="button"
-              aria-label="Theme icon"
-              disabled
-            >
-              <Moon size={16} />
-            </button>
+            {/* Theme Toggle */}
+            <ThemeToggle />
 
             {/* Mobile Menu */}
             <MobileMenu />
