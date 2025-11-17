@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useTheme } from 'next-themes';
-import { getColorCombinations, darkColors, lightColors } from './colors';
+import { useTheme } from "next-themes";
+import { darkColors, getColorCombinations, lightColors } from "./colors";
 
 /**
  * Hook to get theme-aware colors and color combinations
@@ -10,17 +10,17 @@ import { getColorCombinations, darkColors, lightColors } from './colors';
  */
 export function useThemeColors() {
   const { theme, systemTheme } = useTheme();
-  
+
   // Determine the actual theme being used
-  const actualTheme = theme === 'system' ? systemTheme : theme;
-  const isDark = actualTheme === 'dark';
-  
+  const actualTheme = theme === "system" ? systemTheme : theme;
+  const isDark = actualTheme === "dark";
+
   // Get the appropriate color palette
   const colors = isDark ? darkColors : lightColors;
-  
+
   // Get theme-aware color combinations
-  const colorCombinations = getColorCombinations(isDark ? 'dark' : 'light');
-  
+  const colorCombinations = getColorCombinations(isDark ? "dark" : "light");
+
   return {
     colors,
     colorCombinations,
