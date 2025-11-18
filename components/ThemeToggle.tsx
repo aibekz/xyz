@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Moon, Sun, Monitor } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { Monitor, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
   const { theme, setTheme, systemTheme } = useTheme();
@@ -27,22 +27,22 @@ export default function ThemeToggle() {
   }
 
   const getIcon = () => {
-    if (theme === 'system') {
+    if (theme === "system") {
       return <Monitor size={16} />;
     }
-    return theme === 'light' ? <Sun size={16} /> : <Moon size={16} />;
+    return theme === "light" ? <Sun size={16} /> : <Moon size={16} />;
   };
 
   const getNextTheme = () => {
-    if (theme === 'light') return 'dark';
-    if (theme === 'dark') return 'system';
-    return 'light';
+    if (theme === "light") return "dark";
+    if (theme === "dark") return "system";
+    return "light";
   };
 
   const getAriaLabel = () => {
-    if (theme === 'system') return 'Switch to light theme';
-    if (theme === 'light') return 'Switch to dark theme';
-    return 'Switch to system theme';
+    if (theme === "system") return "Switch to light theme";
+    if (theme === "light") return "Switch to dark theme";
+    return "Switch to system theme";
   };
 
   return (
@@ -51,7 +51,7 @@ export default function ThemeToggle() {
       type="button"
       aria-label={getAriaLabel()}
       onClick={() => setTheme(getNextTheme())}
-      title={`Current: ${theme}${theme === 'system' ? ` (${systemTheme})` : ''}`}
+      title={`Current: ${theme}${theme === "system" ? ` (${systemTheme})` : ""}`}
     >
       {getIcon()}
     </button>
