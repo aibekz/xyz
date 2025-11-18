@@ -1,7 +1,3 @@
-export const navigationItems = [
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
-] as const;
+export const navigationItems = [] as const;
 
 export type NavigationItem = (typeof navigationItems)[number];
