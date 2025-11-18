@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
@@ -12,24 +13,26 @@ export default function Footer() {
         {/* Right: Social / Contact Links */}
         <ul className="flex gap-2">
           <li>
-            <button
+            <Link
+              href="https://github.com/vanzalabs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center size-9 border border-[var(--border-color)] bg-[var(--bg-color)] hover:bg-[var(--text-color)]/10 hover:text-[var(--text-color)] transition-all duration-200"
-              type="button"
-              aria-label="Theme toggle"
-              disabled
+              aria-label="GitHub"
             >
               <Github size={18} />
-            </button>
+            </Link>
           </li>
           <li>
-            <button
+            <Link
+              href="https://linkedin.com/company/vanzalabs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center size-9 border border-[var(--border-color)] bg-[var(--bg-color)] hover:bg-[var(--text-color)]/10 hover:text-[var(--text-color)] transition-all duration-200"
-              type="button"
-              aria-label="Theme toggle"
-              disabled
+              aria-label="LinkedIn"
             >
               <Linkedin size={18} />
-            </button>
+            </Link>
           </li>
         </ul>
       </div>

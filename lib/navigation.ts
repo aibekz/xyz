@@ -1,3 +1,6 @@
-export const navigationItems = [] as const;
+export type NavigationItem = {
+  href: string;
+  label: string;
+};
 
-export type NavigationItem = (typeof navigationItems)[number];
+export const navigationItems: readonly NavigationItem[] = [] as const;

@@ -35,6 +35,11 @@ export default function MobileMenu() {
     setIsMobileMenuOpen(false);
   };
 
+  // Don't render if there are no navigation items
+  if (navigationItems.length === 0) {
+    return null;
+  }
+
   return (
     <>
       {/* Mobile Menu Button */}

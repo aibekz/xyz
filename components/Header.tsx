@@ -18,17 +18,19 @@ export default function Header() {
           {/* Right: Navigation & Buttons */}
           <div className="ml-auto flex items-center gap-2 md:gap-4">
             {/* Desktop Navigation */}
-            <nav className="hidden items-center gap-4 text-sm sm:gap-6 md:flex">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+            {navigationItems.length > 0 && (
+              <nav className="hidden items-center gap-4 text-sm sm:gap-6 md:flex">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            )}
 
             {/* Theme Toggle */}
             <ThemeToggle />
