@@ -12,11 +12,11 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Aibek – Software Engineer",
+  title: "Vanza Labs – Software Engineering",
   description:
-    "I'm Aibek – a Software Engineer building web applications to provide immense value and impact in areas I'm passionate about.",
-  keywords: ["Aibek.me", "Aibek.xyz"],
-  authors: [{ name: "Aibek", url: "https://aibek.me" }],
+    "Vanza Labs, Inc. builds modern web applications that deliver meaningful value across the markets we serve.",
+  keywords: ["Vanza Labs", "Vanza Labs, Inc."],
+  authors: [{ name: "Vanza Labs, Inc.", url: "https://vanzalabs.com" }],
 };
 
 export default function RootLayout({

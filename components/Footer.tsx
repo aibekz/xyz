@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-4xl flex items-center justify-between gap-y-2 px-4">
         {/* Left: Footer Text */}
         <div className="text-sm text-[var(--text-color)]/70 text-center sm:text-left">
-          <p>&copy; {new Date().getFullYear()} Aibek.xyz</p>
+          <p>&copy; {new Date().getFullYear()} Vanza Labs, Inc.</p>
         </div>
 
         {/* Right: Social / Contact Links */}
