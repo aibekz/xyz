@@ -12,9 +12,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vanza Labs – Software Engineering",
+  title: "Vanza Labs",
   description:
-    "Vanza Labs, Inc. builds modern web applications that deliver meaningful value across the markets we serve.",
+    "Vanza Labs",
   keywords: ["Vanza Labs", "Vanza Labs, Inc."],
   authors: [{ name: "Vanza Labs, Inc.", url: "https://vanzalabs.com" }],
 };
