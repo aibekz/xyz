@@ -11,7 +11,7 @@ export default function Header() {
           {/* Left: Logo / Brand */}
           <div className="flex items-center gap-2">
             <Link href="/" className="text-lg font-semibold">
-              Vanza Labs
+              VANZA LABS
             </Link>
           </div>
 
