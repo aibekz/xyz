@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -21,6 +22,17 @@ export default function Footer() {
               aria-label="GitHub"
             >
               <Github size={18} />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://x.com/vanzalabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center size-9 border border-[var(--border-color)] bg-[var(--bg-color)] hover:bg-[var(--text-color)]/10 hover:text-[var(--text-color)] transition-all duration-200"
+              aria-label="X"
+            >
+              <FaXTwitter size={18} />
             </Link>
           </li>
           <li>
