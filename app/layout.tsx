@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { Suspense } from "react";
 import AnalyticsProvider from "./analytics-provider";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -56,7 +57,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-        <AnalyticsProvider />
+        <Suspense fallback={null}>
+          <AnalyticsProvider />
+        </Suspense>
         <Analytics />
       </body>
     </html>
