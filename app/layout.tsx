@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
-import Script from "next/script";
+import { GoogleAnalytics } from "next/third-parties/google";
 import { Suspense } from "react";
 import AnalyticsProvider from "./analytics-provider";
 
@@ -28,25 +28,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
-     <head>
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-      </head> 
       <body
         className={`antialiased ${ibmPlexSans.variable} bg-[var(--bg-color)] text-[var(--text-color)] font-sans`}
       >
@@ -57,9 +42,13 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        {/* Google Analytics - Only load if GA_ID is configured */}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
+        {/* Track route changes in App Router */}
         <Suspense fallback={null}>
           <AnalyticsProvider />
         </Suspense>
+        {/* Vercel Analytics */}
         <Analytics />
       </body>
     </html>
